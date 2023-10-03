@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Chronic Kidney Disease</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='diabetes-favicon.ico') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style1.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+        /* Reset some default styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Container styles */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container-heading {
+            font-family: 'Pacifico', cursive;
+            font-size: 36px;
+            color: #0074D9;
+            margin-bottom: 10px;
+        }
+
+        .description {
+            font-size: 18px;
+        }
+
+        /* Result styles */
+        .results {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #FFFFFF;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .danger {
+            color: #FF0000;
+        }
+
+        .safe {
+            color: #00FF00;
+        }
+
+        .gif {
+            width: 200px;
+            height: 400px;
+        }
+
+        .gif1 {
+            width: 200px;
+            height: 400px;
+        }
+
+        /* Button styles */
+        .my-cta-button {
+            background-color: #0074D9;
+            color: #FFFFFF;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        .my-cta-button:hover {
+            background-color: #0056A3;
+        }
+    </style>
+</head>
+<body>
+    <!-- Website Title -->
+    <div class="container">
+        <h2 class='container-heading'><span class="heading_font">Chronic Kidney Disease</span></h2>
+        <div class='description'>
+            <p>A ML based Application for Kidney Disease Prediction</p>
+        </div>
+    </div>
+
+    <!-- Result -->
+    <div class="results">
+        {% if prediction_text==0 %}
+            <h1>Prediction: <span class='danger'>Oops! The diagnosis reveals that you have Chronic Kidney Disease, consult your doctor.</span></h1>
+            <img class="gif" src="{{ url_for('static', filename='oops.gif') }}" alt=" Sad Image" >
+        {% elif prediction_text==1 %}
+            <h1>Prediction: <span class='safe'>Great! Your diagnosis indicates that you are free from Chronic Kidney Disease, and you can continue with your normal health routine</span></h1>
+            <img class="gif1" src="{{ url_for('static', filename='happy.gif') }}" alt=" Happy Image" width="200" height="400">
+        {% endif %}
+    </div>
+
+    <form action="{{ url_for('my_home') }}" method="POST">
+        <input type="submit" class="my-cta-button" value="HOME">
+    </form>
+</body>
+</html>
