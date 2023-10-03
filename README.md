@@ -27,7 +27,7 @@ Before running the application, ensure you have the following:
 1. Clone this repository to your local machine:
 
    ```shell
-   git clone https://github.com/your-username/Chronic-Kidney-Disease.git
+   git clone https://github.com/krishnaveni03/Chronic-Kidney-Disease.git
    cd Chronic-Kidney-Disease
    ```
 
