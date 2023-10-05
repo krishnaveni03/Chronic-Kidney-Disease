@@ -1,5 +1,4 @@
-# Chronic-Kidney-Disease
-Certainly, here's a README file template for your Chronic Kidney Disease prediction project:
+
 
 # Chronic Kidney Disease Prediction
 
