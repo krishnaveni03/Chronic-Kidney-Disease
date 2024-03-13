@@ -6,13 +6,16 @@
         /* Add CSS styles here */
         body {
             font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
         }
         
         header {
             background-color: #0074D9;
             color: #FFFFFF;
             text-align: center;
-            padding: 20px;
+            padding: 20px 0;
         }
         
         .wrapper {
@@ -52,10 +55,23 @@
             padding: 10px 20px;
             border: none;
             cursor: pointer;
+            border-radius: 5px;
         }
         
         input[type="submit"]:hover {
             background-color: #45a049;
+        }
+        
+        .container {
+            text-align: center;
+            margin-top: 50px;
+        }
+        
+        .container p {
+            font-size: 18px;
+            color: #333;
+            line-height: 1.5;
+            margin-bottom: 20px;
         }
     </style>
 </head>
@@ -72,5 +88,10 @@
             </div>
         </header>
     </form>
+    
+    <div class="container">
+        <p>A Machine Learning based application for predicting Chronic Kidney Disease.</p>
+        <!-- Add more content or UI elements here -->
+    </div>
 </body>
 </html>
