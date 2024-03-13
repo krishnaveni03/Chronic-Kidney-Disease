@@ -6,6 +6,13 @@
 
 This project is a web-based application that predicts the likelihood of Chronic Kidney Disease (CKD) in individuals based on various medical attributes. The application is built using Python and Flask and utilizes a Machine Learning model for predictions. Users can input their medical data, and the application will provide a prediction of whether they are at risk for CKD.
 
+
+Deployment Link: Chronic Kidney Disease Prediction
+Description:
+
+Utilizes a machine learning model trained on medical data to predict CKD likelihood.
+Facilitates early detection and personalized intervention for improved patient care.
+Allows users to input medical information for prediction and provides insights for healthcare professionals.
 ## Features
 
 - User-friendly web interface.
