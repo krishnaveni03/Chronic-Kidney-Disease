@@ -7,7 +7,9 @@
 This project is a web-based application that predicts the likelihood of Chronic Kidney Disease (CKD) in individuals based on various medical attributes. The application is built using Python and Flask and utilizes a Machine Learning model for predictions. Users can input their medical data, and the application will provide a prediction of whether they are at risk for CKD.
 
 
-Deployment Link: Chronic Kidney Disease Prediction
+**Chronic Kidney Disease Prediction Deployment**
+
+Repository: Chronic Kidney Disease Prediction
 Description:
 
 Utilizes a machine learning model trained on medical data to predict CKD likelihood.
@@ -57,22 +59,6 @@ Before running the application, ensure you have the following:
 
 5. You can also navigate to the "HOME" button to return to the main page.
 
-## Model Training and Data
 
-- The Machine Learning model used for CKD prediction should be trained separately. You can refer to the `model_training.ipynb` notebook in the repository for guidance on training the model.
-- The dataset used for training should be appropriately preprocessed and split into training and testing sets.
 
-## Contributing
 
-If you would like to contribute to this project, please follow the guidelines outlined in the [CONTRIBUTING.md](CONTRIBUTING.md) file.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
-## Acknowledgments
-
-- Thanks to the open-source community for providing libraries and tools used in this project.
-- Acknowledgments, if any, for specific datasets or research papers used in model training.
-
-Feel free to customize this README file to include additional information specific to your project.
