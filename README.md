@@ -8,7 +8,7 @@ This project is a web-based application that predicts the likelihood of Chronic 
 
 
 **Chronic Kidney Disease Prediction Deployment**
-Take a look on https://chronic-kidney-disease-78w2.onrender.com/
+Take a look on [my app](https://chronic-kidney-disease-3.onrender.com/)
 
 Description:
 
