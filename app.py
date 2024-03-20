@@ -1,42 +1,35 @@
-# importing the necessary dependencies
+# Importing the necessary dependencies
 import numpy as np
 import pandas as pd
 from flask import Flask, request, render_template
 import pickle
 
-app = Flask(__name__) # initializing a flask app
-model = pickle.load(open('CKD.pkl', 'rb')) #loading the model
+app = Flask(__name__)  # Initializing a Flask app
+model = pickle.load(open('CKD.pkl', 'rb'))  # Loading the model
 
-@app.route('/')# route to display the home page
-def home():
-    return render_template('home.html') #rendering the home page
-@app.route('/Prediction',methods=['POST','GET'])
-def prediction():
-    return render_template('indexnew.html')
-@app.route('/Home',methods=['POST','GET'])
-def my_home():
-    return render_template('home.html')
-
-@app.route('/predict',methods=['POST'])# route to show the predictions in a web UI
+@app.route('/predict', methods=['POST'])  # Route to display the single-page application
 def predict():
-    
-    #reading the inputs given by the user
-    input_features = [float(x) for x in request.form.values()]
-    features_value = [np.array(input_features)]
-    
-    
-    features_name = ['pus_cell', 'blood glucose random','blood_urea',
-            'pedal_edema', 'anemia','diabetesmellitus','hypertension',
-         'hemoglobin','specific_gravity','packed_cell_volume','red_blood_cell_count','appetite']
-    
-    df = pd.DataFrame(features_value, columns=features_name)
-    
-    # predictions using the loaded model file
-    output = model.predict(df)
-    
-    # showing the prediction results in a UI# showing the prediction results in a UI
-    return render_template('result.html', prediction_text=output)
+    if request.method == 'POST':
+        # Reading the inputs given by the user
+        input_features = [float(request.form[x]) for x in request.form.keys()]
+        features_name = ['pus_cell', 'blood glucose random', 'blood_urea',
+                         'pedal_edema', 'anemia', 'diabetesmellitus', 'hypertension',
+                         'hemoglobin', 'specific_gravity', 'packed_cell_volume',
+                         'red_blood_cell_count', 'appetite']
+        df = pd.DataFrame([input_features], columns=features_name)
+
+        # Predictions using the loaded model file
+        output = model.predict(df)
+
+        # Showing the prediction results in a UI
+        return render_template('result.html', prediction_text=output[0])
+    else:
+        return render_template('index.html')
+
+@app.route('/')
+def home():
+    return render_template('index.html')
 
 if __name__ == '__main__':
-    # running the app
+    # Running the app
     app.run(debug=True)
