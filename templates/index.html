@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chronic Kidney Disease Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-top: 20px;
+        }
+
+        form {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .flex-container {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .flex-child {
+            flex: 1;
+            padding: 10px;
+            background-color: #f9f9f9; /* Background color for the left side box */
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .green {
+            background-color: #c0ebd7;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        select,
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h1>Chronic Kidney Disease Prediction</h1>
+    <form action="/predict" method="post">
+        <div class="flex-container">
+            <div class="flex-child">
+            <div class="flex-child green">
+                <label for="pus_cell">Pus Cell:</label>
+                <select id="pus_cell" name="pus_cell">
+                    <option value="">Select pus cell or not</option>
+                    <option value="1">Normal</option>
+                    <option value="0">Abnormal</option>
+                </select><br>
+                <!-- Blood Glucose Random -->
+                <label for="blood_glucose_random">Blood Glucose Random:</label>
+                <input class="form-input" type="text" name="blood_glucose_random" placeholder="Enter your blood glucose random"><br>
+                <!-- Blood Urea -->
+                <label for="blood_urea">Blood Urea:</label>
+                <input class="form-input" type="text" name="blood_urea" placeholder="Enter your blood urea"><br>
+                <!-- Pedal Edema -->
+                <label for="pedal_edema">Pedal Edema:</label>
+                <select id="pedal_edema" name="pedal_edema">
+                    <option value="">Select pedal edema or not</option>
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select><br>
+                <!-- Anemia -->
+                <label for="anemia">Anemia:</label>
+                <select id="anemia" name="anemia">
+                    <option value="">Select anemia or not</option>
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select><br>
+                <!-- Diabetes Mellitus -->
+                <label for="diabetesmellitus">Diabetes Mellitus:</label>
+                <select id="diabetesmellitus" name="diabetesmellitus">
+                    <option value="">Select diabetes mellitus or not</option>
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select><br>
+            </div>
+            </div>
+
+            <div class="flex-child green">
+                <!-- Hypertension -->
+                <label for="hypertension">Hypertension:</label>
+                <select id="hypertension" name="hypertension">
+                    <option value="">Select hypertension or not</option>
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select><br>
+                <!-- Hemoglobin -->
+                <label for="hemoglobin">Hemoglobin:</label>
+                <input class="form-input" type="text" name="hemoglobin" placeholder="Enter your hemoglobin level"><br>
+                <!-- Specific Gravity -->
+                <label for="specific_gravity">Specific Gravity:</label>
+                <input class="form-input" type="text" name="specific_gravity" placeholder="Enter your specific gravity"><br>
+                <!-- Packed Cell Volume -->
+                <label for="packed_cell_volume">Packed Cell Volume:</label>
+                <input class="form-input" type="text" name="packed_cell_volume" placeholder="Enter your packed cell volume"><br>
+                <!-- Red Blood Cell Count -->
+                <label for="red_blood_cell_count">Red Blood Cell Count:</label>
+                <input class="form-input" type="text" name="red_blood_cell_count" placeholder="Enter your red blood cell count"><br>
+                <!-- Appetite -->
+                <label for="appetite">Appetite:</label>
+                <select id="appetite" name="appetite">
+                    <option value="">Select appetite</option>
+                    <option value="1">Poor</option>
+                    <option value="0">Good</option>
+                </select><br>
+            </div>
+        </div>
+        <button type="submit">Predict</button>
+    </form>
+</body>
+
+</html>
